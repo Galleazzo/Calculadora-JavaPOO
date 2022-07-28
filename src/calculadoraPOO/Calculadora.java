@@ -1,6 +1,6 @@
 package calculadoraPOO;
 
-public class Calculadora {
+public class Calculadora implements Visual{
 
 	private Double n1;
 	private Double n2;
@@ -21,28 +21,31 @@ public class Calculadora {
 	public Double getN2() {
 		return this.n2;
 	}
-
+	
+	@Override
 	public void Soma() {
 		Double n3 = this.getN1() + this.getN2();
-		System.out.println("A soma é: " + n3);
+		System.out.println("A soma ï¿½: " + n3);
 	}
-
+	
+	@Override
 	public void Subtacao() {
 		Double n3;
 		if (this.getN1() > this.getN2()) {
 			n3 = this.getN1() - this.getN2();
-			System.out.println("1º: " + n3);
+			System.out.println("1ï¿½: " + n3);
 			
 		} else if (this.getN2() > this.getN1()) {
 			n3 = this.getN2() - this.getN1();
-			System.out.println("2º: " + n3);
+			System.out.println("2ï¿½: " + n3);
 			
 		} else{
 			n3 = this.getN1() - this.getN2();
-			System.out.println("3º: " + n3);
+			System.out.println("3ï¿½: " + n3);
 		}
 	}
 	
+	@Override
 	public void MostrarTabuadaN1() {
 		for(this.n3 = 0 ; this.n3 <=10; this.n3 =this.n3+1) {
 			Double n4 = this.n3 * this.getN1();
@@ -50,6 +53,7 @@ public class Calculadora {
 		}
 	}
 	
+	@Override
 	public void MostrarTabuadaN2() {
 		for(this.n3 = 0 ; this.n3 <=10 ; this.n3++) {
 			double n4 = this.n3 * this.getN2();
@@ -57,23 +61,29 @@ public class Calculadora {
 		}
 	}
 	
+	@Override
 	public void Divisao() {
 		if(this.getN1() > this.getN2()) {
 			double n3 = this.getN1() / this.getN2();
-			System.out.println("1º: A divisao de "+this.getN1()+" por "+this.getN2()+" é de "+n3);
+			System.out.println("1ï¿½: A divisao de "+this.getN1()+" por "+this.getN2()+" ï¿½ de "+n3);
 		}else if(this.getN2() > this.getN1()) {
 			double n3 = this.getN2() / this.getN1();
-			System.out.println("2º: A divisao de "+this.getN2()+" por "+this.getN1()+" é de "+n3);
+			System.out.println("2ï¿½: A divisao de "+this.getN2()+" por "+this.getN1()+" ï¿½ de "+n3);
 		}else {
 			double n3 = this.getN2() / this.getN1();
-			System.out.println("3º: A divisao de "+this.getN2()+" por "+this.getN1()+" é de "+n3);
+			System.out.println("3ï¿½: A divisao de "+this.getN2()+" por "+this.getN1()+" ï¿½ de "+n3);
 		}
 	}
 	
+	@Override
 	public void Multiplicacao() {
 		double n3;
 		n3 = this.getN1() * this.getN2();
 		System.out.println(this.getN1()+" X "+this.getN2()+" = "+n3);
 	}
-
+	
+	@Override
+	public void Status() {
+		System.out.println("");
+	}
 }
